@@ -1,0 +1,25 @@
+XL
+H 1 areas 9 global symbols
+M asm
+A _CODE size 47 flags 0
+S _cpumode Def003A
+S _play Def0008
+S _playstop Def000E
+S _playerinit Def0000
+S _playwav Def000B
+S _playresume Def0014
+S _addbcd Def001D
+S _playfx Def0017
+S _playpause Def0011
+T 00 00 F8 02 7E 0E 00 C3 00 40 C3 03 40 C3 12 40
+R 00 00 00 00
+T 0E 00 C3 06 40 C3 18 40 C3 09 40 F8 02 7E C3
+R 00 00 00 00
+T 1B 00 15 40 F8 04 46 F8 02 2A 5F 7E 67 6B 7E 80
+R 00 00 00 00
+T 29 00 27 77 B7 C2 36 00 23 7E 3C 27 C3 38 00 23
+R 00 00 00 00 00 06 00 00 00 0D 00 00
+T 37 00 7E 77 C9 3E 30 EA 00 FF 3E 01 EA 4D FF 10
+R 00 00 00 00
+T 45 00 00 C9
+R 00 00 00 00

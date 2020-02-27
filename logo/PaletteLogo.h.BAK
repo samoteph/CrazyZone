@@ -1,0 +1,21 @@
+/************************************************************/
+/*															*/ 
+/* Tableau de Palette										*/
+/*															*/ 
+/************************************************************/
+
+#include <gb.h>
+
+#include ".\logo\LogoTile.h"
+
+UWORD PtrLogoTilePal[]=
+{
+  PtrLogoCGBPal0c0,PtrLogoCGBPal0c1,PtrLogoCGBPal0c2,PtrLogoCGBPal0c3,
+  PtrLogoCGBPal1c0,PtrLogoCGBPal1c1,PtrLogoCGBPal1c2,PtrLogoCGBPal1c3,
+  PtrLogoCGBPal2c0,PtrLogoCGBPal2c1,PtrLogoCGBPal2c2,PtrLogoCGBPal2c3,
+  PtrLogoCGBPal3c0,PtrLogoCGBPal3c1,PtrLogoCGBPal3c2,PtrLogoCGBPal3c3,
+  PtrLogoCGBPal4c0,PtrLogoCGBPal4c1,PtrLogoCGBPal4c2,PtrLogoCGBPal4c3,
+  PtrLogoCGBPal5c0,PtrLogoCGBPal5c1,PtrLogoCGBPal5c2,PtrLogoCGBPal5c3,
+  PtrLogoCGBPal6c0,PtrLogoCGBPal6c1,PtrLogoCGBPal6c2,PtrLogoCGBPal6c3,
+  PtrLogoCGBPal7c0,PtrLogoCGBPal7c1,PtrLogoCGBPal7c2,PtrLogoCGBPal7c3,
+};

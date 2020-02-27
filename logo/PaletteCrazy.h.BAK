@@ -1,0 +1,21 @@
+/************************************************************/
+/*															*/ 
+/* Tableau de Palette										*/
+/*															*/ 
+/************************************************************/
+
+#include <gb.h>
+
+#include ".\logo\crazytile.h"
+
+UWORD PtrTileCrazyPal[]=
+{
+  PtrTileCrazyCGBPal0c0,PtrTileCrazyCGBPal0c1,PtrTileCrazyCGBPal0c2,PtrTileCrazyCGBPal0c3,
+  PtrTileCrazyCGBPal1c0,PtrTileCrazyCGBPal1c1,PtrTileCrazyCGBPal1c2,PtrTileCrazyCGBPal1c3,
+  PtrTileCrazyCGBPal2c0,PtrTileCrazyCGBPal2c1,PtrTileCrazyCGBPal2c2,PtrTileCrazyCGBPal2c3,
+  PtrTileCrazyCGBPal3c0,PtrTileCrazyCGBPal3c1,PtrTileCrazyCGBPal3c2,PtrTileCrazyCGBPal3c3,
+  PtrTileCrazyCGBPal4c0,PtrTileCrazyCGBPal4c1,PtrTileCrazyCGBPal4c2,PtrTileCrazyCGBPal4c3,
+  PtrTileCrazyCGBPal5c0,PtrTileCrazyCGBPal5c1,PtrTileCrazyCGBPal5c2,PtrTileCrazyCGBPal5c3,
+  PtrTileCrazyCGBPal6c0,PtrTileCrazyCGBPal6c1,PtrTileCrazyCGBPal6c2,PtrTileCrazyCGBPal6c3,
+  PtrTileCrazyCGBPal7c0,PtrTileCrazyCGBPal7c1,PtrTileCrazyCGBPal7c2,PtrTileCrazyCGBPal7c3,
+};

@@ -1,0 +1,126 @@
+/************************************************************/
+/*															*/ 
+/* VMonster !!!
+/*															*/ 
+/************************************************************/
+
+/************************************************************/
+/* Define
+/************************************************************/
+
+#define MAX_VMONSTER	24
+#define MAX_MONSTER	24 /*SPRITE_WIDTH_MONSTER*/
+
+// Protection des monstres
+#define DESTRUCTION_VCRASHER	5
+#define DESTRUCTION_VEATER	1
+#define DESTRUCTION_VMINE	3
+#define DESTRUCTION_VFLOWER	0
+#define DESTRUCTION_VCANON	3
+
+// Rectangle de collision
+
+#define RECT_X_VCRASHER		0
+#define RECT_Y_VCRASHER		0
+#define RECT_W_VCRASHER		16
+#define RECT_H_VCRASHER		16
+
+#define RECT_X_VEATER		2
+#define RECT_Y_VEATER		2
+#define RECT_W_VEATER		14
+#define RECT_H_VEATER		14
+
+#define RECT_X_VMINE		2
+#define RECT_Y_VMINE		2
+#define RECT_W_VMINE		14
+#define RECT_H_VMINE		14
+
+#define RECT_X_VFLOWER		2
+#define RECT_Y_VFLOWER		2
+#define RECT_W_VFLOWER		14
+#define RECT_H_VFLOWER		14
+
+#define RECT_X_VMISSILE		2
+#define RECT_Y_VMISSILE		2
+#define RECT_W_VMISSILE		4
+#define RECT_H_VMISSILE		4
+
+#define RECT_X_VCANON		2
+#define RECT_Y_VCANON		2
+#define RECT_W_VCANON		14
+#define RECT_H_VCANON		10
+
+/************************************************************/
+/* Prototype
+/************************************************************/
+
+void Init_VMonster(void);
+void Run_VMonster(void);
+void Add_VMonster(structVSprite *CurrentVMonster);
+
+/** Monstre */
+
+extern void Init_VCrasher(structVSprite *ptrVInfo);
+extern void Run_VCrasher(structVSprite *ptrVInfo);
+
+extern void Init_VEater(structVSprite *ptrVInfo);
+extern void Run_VEater(structVSprite *ptrVInfo);
+
+extern void Init_VMine(structVSprite *ptrVInfo);
+extern void Run_VMine(structVSprite *ptrVInfo);
+
+extern void Init_VFlower(structVSprite *ptrVInfo);
+extern void Run_VFlower(structVSprite *ptrVInfo);
+
+extern void Init_VMissile(structVSprite *ptrVInfo);
+extern void Run_VMissile(structVSprite *ptrVInfo);
+
+extern void Init_VCanonDown(structVSprite *ptrVInfo);
+extern void Run_VCanonDown(structVSprite *ptrVInfo);
+
+extern void Init_VCanonUp(structVSprite *ptrVInfo);
+extern void Run_VCanonUp(structVSprite *ptrVInfo);
+
+/************************************************************/
+/* Data Interne
+/************************************************************/
+
+structVSprite	TabVMonster[MAX_VMONSTER];
+UBYTE		TabMonster[MAX_MONSTER];
+
+structVSprite	InfoCrasher;
+structVSprite	InfoEater;
+structVSprite	InfoMine;
+structVSprite	InfoFlower;
+
+structVSprite	InfoCanonUp;
+structVSprite	InfoCanonDown;
+
+structVSprite	InfoMissileUR;
+structVSprite	InfoMissileUL;
+structVSprite	InfoMissileDR;
+structVSprite	InfoMissileDL;
+structVSprite	InfoMissileUp;
+structVSprite	InfoMissileDown;
+
+/** Evenement de declenchement **/
+
+UWORD	*PtrEvent;
+UBYTE	*PtrEventPos;
+structVSprite **PtrEventType;
+
+UWORD ubCurrentEvent;
+UBYTE ubOffsetFindMonster;
+
+// ** Evenement de declenchement des monstres **
+
+extern UWORD EventVMonster[];
+extern structVSprite *EventVMonsterType[];
+extern UBYTE EventVMonsterPos[];
+
+/************************************************************/
+/* Data Externe
+/************************************************************/
+
+// ROM
+extern	unsigned char PtrMonster[];

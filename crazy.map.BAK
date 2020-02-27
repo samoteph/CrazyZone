@@ -1,0 +1,438 @@
+AREA .  .ABS.
+	RADIX HEX
+	BASE 0000
+	SIZE 0000
+	ATTRIB ABS OVR
+	GLOBALS
+		l__LIT_1	0000
+		l__LIT_3	0000
+		l__LIT_5	0000
+		l__HEAP	0000
+		l_.  .ABS.	0000
+		s_.  .ABS.	0000
+		l__CODE_1	0000
+		l__CODE_3	0000
+		l__CODE_5	0000
+		s__HEADER	0000
+		.init	0000
+		l__LIT_4	0008
+		l__LIT	001E
+		l__DATA	0065
+		l__DATA_4	00C0
+		l__HEADER	01E1
+		s__CODE	0200
+		l__BSS	0529
+		l__DATA_3	11D0
+		l__CODE_4	1382
+		l__CODE	2B47
+		s__DATA	2D47
+		s__LIT	2DAC
+		l__DATA_5	3BC2
+		l__DATA_1	3BC8
+		s__DATA_1	4000
+		s__CODE_1	4000
+		s__DATA_3	4000
+		s__CODE_3	4000
+		s__DATA_5	4000
+		s__CODE_4	4000
+		s__CODE_5	4000
+		s__LIT_3	51D0
+		s__DATA_4	5382
+		s__LIT_4	5442
+		s__LIT_5	7BC2
+		s__LIT_1	7BC8
+		.OAM	C000
+		s__BSS	C0A0
+		s__HEAP	C5C9
+		.STACK	E000
+		.refresh_OAM	FF80
+AREA _CODE
+	RADIX HEX
+	BASE 0200
+	SIZE 2B47
+	ATTRIB REL CON
+	GLOBALS
+		.set_mode	0200
+		.add_VBL	0210
+		.add_LCD	0216
+		.add_TIM	021C
+		.add_SIO	0222
+		.add_JOY	0228
+		.remove_int	022E
+		.add_int	0240
+		.vbl	024B
+		.wait_vbl_done	025C
+		_wait_vbl_done	025C
+		_display_off	026D
+		.display_off	026D
+		.serial_IO	028E
+		_mode	02BD
+		_get_mode	02C6
+		_enable_interrupts	02CB
+		_disable_interrupts	02CD
+		_reset	02CF
+		.reset	02CF
+		_set_interrupts	02D5
+		_add_VBL	02E0
+		_add_LCD	02EB
+		_add_TIM	02F6
+		_add_SIO	0301
+		_add_JOY	030C
+		_Init_Player	0317
+		_Stop_Player	032A
+		_Init_Scroll	0333
+		_Stop_Scroll	03C0
+		_Set_Bkg_MapAttribut	03C9
+		_Init_VEngine	05D8
+		_Init_VSmallWing	060F
+		_Run_VSmallWing	063E
+		_Init_VSmallEngine	06D8
+		_Run_VSmallEngine	0707
+		_Init_VWeapon	079F
+		_Run_VWeapon	0810
+		_Find_VWeapon	0875
+		_Find_Weapon	08C3
+		_Add_VWeapon	0904
+		_Init_VTwinShot	0AE2
+		_Run_VTwinShot	0B1F
+		_Init_VBoom	0C3D
+		_Init_VStar	0C4F
+		_Run_VStar	0D41
+		_Init_VExplodeOpa	0F2C
+		_Run_VExplodeOpa	0F9F
+		_Init_VMonster	10AB
+		_Run_VMonster	1243
+		_Find_VMonster	13A5
+		_Find_Monster	13F3
+		_Add_VMonster	1443
+		_Delete_VMonster	169E
+		_Init_VOpa	1705
+		_Run_VOpa	180E
+		_Init_Life	1CF3
+		_Dec_Heart_VOpa	1D08
+		_Dec_Life_VOpa	1D45
+		_Show_Heart_VOpa	1E4E
+		_Show_Life_VOpa	1ECB
+		_Init_Money	1EF1
+		_Add_Money	1F24
+		_Init_Sprite	1FC6
+		_Run_VCollision	1FD8
+		_main	2205
+		_Show_Level	25A3
+		_NextLevel	25ED
+		_FixHBL	268E
+		_FixVBL	2695
+		_anHBL	269C
+		_anVBL	26A9
+		_HBL_Level1	26C8
+		_VBL_Level1	26F1
+		_VBL_Level2	2790
+		_Draw_Map	28F4
+		_HBL_Title	28FE
+		_VBL_Title	29BF
+		_SpeedUp	29EF
+		_GetVSpriteMap	2A0D
+		_Set2x2VSpriteMap	2A3E
+		_playerinit	2A77
+		_play	2A7F
+		_playwav	2A82
+		_playstop	2A85
+		_playpause	2A88
+		_playresume	2A8B
+		_playfx	2A8E
+		_addbcd	2A94
+		_cpumode	2AB1
+		.set_sprite_prop	2ABE
+		_set_sprite_prop	2ACB
+		_move_win	2AD6
+		_set_bkg_palette	2ADF
+		_set_sprite_palette	2B0A
+		_set_bkg_palette_entry	2B35
+		_set_sprite_palette_entry	2B5D
+		.mv_sprite	2B85
+		_move_sprite	2B94
+		_set_win_tiles	2BA1
+		_set_win_data	2BB5
+		_set_bkg_data	2BB5
+		_set_sprite_data	2C02
+		.mulu16	2C31
+		.mul16	2C31
+		.mulu8	2C49
+		.mul8	2C49
+		.padup	2C50
+		_waitpadup	2C50
+		.jpad	2C60
+		.wait_pad	2C8D
+		_joypad	2C94
+		_waitpad	2C99
+		.set_sprite_tile	2CA3
+		_set_sprite_tile	2CB0
+		.copy_vram	2CBB
+		_get_data	2CCA
+		_set_data	2CCA
+		.set_xy_wtt	2CDD
+		.set_xy_btt	2CEE
+		.set_xy_tt	2CFD
+		_set_tiles	2D2E
+AREA _HEADER
+	RADIX HEX
+	BASE 0000
+	SIZE 01E1
+	ATTRIB ABS OVR
+AREA _DATA
+	RADIX HEX
+	BASE 2D47
+	SIZE 0065
+	ATTRIB REL CON
+	GLOBALS
+		_GetReady	2D47
+		_GameOver	2D51
+		_PtrPal	2D5B
+		_PtrPalBlack	2D63
+		_LevelMap	2DA3
+AREA _LIT
+	RADIX HEX
+	BASE 2DAC
+	SIZE 001E
+	ATTRIB REL CON
+AREA _BSS
+	RADIX HEX
+	BASE C0A0
+	SIZE 0529
+	ATTRIB REL CON
+	GLOBALS
+		__cpu	C0A0
+		.mode	C0A1
+		__io_out	C0A2
+		__io_in	C0A3
+		__io_status	C0A4
+		.vbl_done	C0A5
+		_sys_time	C0A6
+		.sys_time	C0A6
+		.int_0x40	C0A8
+		.int_0x48	C0B8
+		.int_0x50	C0C8
+		.int_0x58	C0D8
+		.int_0x60	C0E8
+		_NumLevelMap	C0F8
+		_ubReset	C0F9
+		_ubHeartMap	C0FA
+		_ubLifeMap	C0FF
+		_ubOffset	C100
+		_i	C104
+		_j	C105
+		_ubOffsetFindMonster	C106
+		_ubCurrentEvent	C107
+		_PtrEventType	C109
+		_PtrEventPos	C10B
+		_PtrEvent	C10D
+		_InfoMissileDown	C10F
+		_InfoMissileUp	C129
+		_InfoMissileDL	C143
+		_InfoMissileDR	C15D
+		_InfoMissileUL	C177
+		_InfoMissileUR	C191
+		_InfoCanonDown	C1AB
+		_InfoCanonUp	C1C5
+		_InfoFlower	C1DF
+		_InfoMine	C1F9
+		_InfoEater	C213
+		_InfoCrasher	C22D
+		_TabMonster	C247
+		_TabVMonster	C25F
+		_ubOffsetFindWeapon	C4CF
+		_TabWeapon	C4D0
+		_TabVWeapon	C4D6
+		_CurrentVWeapon	C572
+		_fctTypeOfWeapon	C58C
+		_ubSpeedEngineY	C58E
+		_ubSpeedEngineX	C58F
+		_fctTypeOfEngine	C590
+		_uwMoneyValue	C592
+		_ubMoney	C594
+		_ubTimeVanished	C599
+		_ubVanished	C59A
+		_ubLife	C59B
+		_ubMaxHeart	C59C
+		_ubHeart	C59D
+		_ubInvincible	C59E
+		_ubPressA	C59F
+		_VOpa	C5A0
+		_ubTypeofFX	C5BA
+		_ubLevel	C5BB
+		_ubLevelRom	C5BC
+		_ScrollRaster1	C5BF
+		_CounterVBL	C5C0
+		_ScrollScreen	C5C1
+		_ScrollMap	C5C2
+		_StartScroll	C5C4
+AREA _HEAP
+	RADIX HEX
+	BASE C5C9
+	SIZE 0000
+	ATTRIB REL CON
+	GLOBALS
+		_malloc_heap_start	C5C9
+AREA _CODE_1
+	RADIX HEX
+	BASE 4000
+	SIZE 0000
+	ATTRIB REL CON
+AREA _DATA_1
+	RADIX HEX
+	BASE 4000
+	SIZE 3BC8
+	ATTRIB REL CON
+	GLOBALS
+		_MountainDataLevel1	4100
+		_PtrMountainDataLevel1	4308
+		_PtrTileLevel1CGBPal	4328
+		_PtrTileLevel1	43A8
+		_PtrMapLevel1	49E8
+		_EventVMonster	7B0A
+		_EventVMonsterType	7B4A
+		_EventVMonsterPos	7B8A
+AREA _LIT_1
+	RADIX HEX
+	BASE 7BC8
+	SIZE 0000
+	ATTRIB REL CON
+AREA _CODE_3
+	RADIX HEX
+	BASE 4000
+	SIZE 0000
+	ATTRIB REL CON
+AREA _DATA_3
+	RADIX HEX
+	BASE 4000
+	SIZE 11D0
+	ATTRIB REL CON
+	GLOBALS
+		_PtrCrazyTilePal	4000
+		_PtrCrazyTile	4040
+		_PtrCrazyMap	4CD0
+		_PtrCrazySprite	5150
+AREA _LIT_3
+	RADIX HEX
+	BASE 51D0
+	SIZE 0000
+	ATTRIB REL CON
+AREA _CODE_4
+	RADIX HEX
+	BASE 4000
+	SIZE 1382
+	ATTRIB REL CON
+	GLOBALS
+		_Init_VCrasher	4000
+		_Run_VCrasher	40CE
+		_Init_VEater	4345
+		_Run_VEater	442F
+		_Init_VMine	46C2
+		_Run_VMine	4790
+		_Init_VFlower	4918
+		_Run_VFlower	49E6
+		_Init_VMissile	4C4B
+		_Run_VMissile	4CB7
+		_Init_VCanonDown	4D93
+		_Run_VCanonDown	4E53
+		_Init_VCanonUp	50A6
+		_Run_VCanonUp	5166
+AREA _DATA_4
+	RADIX HEX
+	BASE 5382
+	SIZE 00C0
+	ATTRIB REL CON
+	GLOBALS
+		_ubAnimFlower	5382
+		_ubAnimCanon	5392
+		_TabSin	53A2
+AREA _LIT_4
+	RADIX HEX
+	BASE 5442
+	SIZE 0008
+	ATTRIB REL CON
+AREA _CODE_5
+	RADIX HEX
+	BASE 4000
+	SIZE 0000
+	ATTRIB REL CON
+AREA _DATA_5
+	RADIX HEX
+	BASE 4000
+	SIZE 3BC2
+	ATTRIB REL CON
+	GLOBALS
+		_DimeDataLevel1	4000
+		_FloconDataLevel2	4100
+		_PtrDimeDataLevel1	4300
+		_PtrAnim	4308
+		_PtrTileLevel2CGBPal	4328
+		_PtrOpaCGBPal	4368
+		_PtrTileLevel2	43A8
+		_PtrMapLevel2	49E8
+		_PtrWindowMap	726A
+		_PtrOpa	753A
+		_PtrEngine	757A
+		_PtrWeapon	75BA
+		_PtrMonster	75CA
+		_PtrBoom	7AFA
+		_EventVMonster2	7B0A
+		_EventVMonsterType2	7B48
+		_EventVMonsterPos2	7B86
+AREA _LIT_5
+	RADIX HEX
+	BASE 7BC2
+	SIZE 0000
+	ATTRIB REL CON
+MODULES
+	FILE \SDK\gbz80-gb\2-1-0\lib\crt0.o
+		NAME Runtime
+	FILE C:\WINDOWS\TEMP\lcc140052.o
+	FILE scroll.o
+	FILE Title.o
+	FILE cpu.o
+	FILE sprite.o
+	FILE asm.o
+		NAME asm
+	FILE R1.o
+	FILE R3.o
+	FILE R4.o
+	FILE R5.o
+LIBRARIES
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE set_prop.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE mv_win.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE cgb.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE mv_spr.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE set_wi_t.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE set_data.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE mul.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE pad.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE set_spr.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE cpy_data.o
+	LIBRARY \SDK\gbz80-gb\2-1-0\lib\gb.lib
+		MODULE set_xy_t.o
+USERBASEDEF
+	_CODE=0x0200
+	_BSS=0xC0A0
+	_CODE_1=0x4000
+	_CODE_2=0x4000
+	_CODE_3=0x4000
+	_CODE_4=0x4000
+	_CODE_5=0x4000
+	_CODE_6=0x4000
+	_CODE_7=0x4000
+USERGLOBALDEF
+	.OAM=0xC000
+	.STACK=0xE000
+	.refresh_OAM=0xFF80
+	.init=0x0000

@@ -1,0 +1,42 @@
+XL
+H 3 areas 15 global symbols
+S .add_TIM Ref0000
+S .add_SIO Ref0000
+S _main Ref0000
+S .STACK Ref0000
+S __cpu Ref0000
+S .add_JOY Ref0000
+S .wait_vbl_done Ref0000
+S __io_in Ref0000
+S __io_out Ref0000
+S .reset Ref0000
+S .mode Ref0000
+S __io_status Ref0000
+S .init Ref0000
+S .add_LCD Ref0000
+S .OAM Ref0000
+S .refresh_OAM Ref0000
+S .add_VBL Ref0000
+S .display_off Ref0000
+S .set_mode Ref0000
+A _CODE size 6A flags 0
+S _Set2x2VSpriteMap Def0031
+S _GetVSpriteMap Def0000
+A _DATA size 0 flags 0
+A _BSS size 0 flags 0
+T 00 00 F8 03 5F F0 43 83 D6 08 5F 7E D6 10 CB 3B
+R 00 00 00 00
+T 0E 00 CB 3B CB 3B CB 3F CB 3F CB 3F CB 37 CB 07
+R 00 00 00 00
+T 1C 00 4F E6 03 C6 98 67 3E E0 A1 4F 7B 81 6F F0
+R 00 00 00 00
+T 2A 00 41 E6 02 20 FA 5E C9 F8 03 5F F0 43 83 D6
+R 00 00 00 00
+T 38 00 08 5F 7E D6 10 CB 3B CB 3B CB 3B CB 3F CB
+R 00 00 00 00
+T 46 00 3F CB 3F CB 37 CB 07 4F E6 03 C6 98 67 3E
+R 00 00 00 00
+T 54 00 E0 A1 4F 7B 81 6F F0 41 E6 02 20 FA AF 22
+R 00 00 00 00
+T 62 00 77 01 20 00 09 32 77 C9
+R 00 00 00 00

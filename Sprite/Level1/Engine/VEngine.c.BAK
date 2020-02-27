@@ -1,0 +1,141 @@
+/************************************************************/
+/*								 
+/* Virtual Engine !!!						
+/*								 
+/************************************************************/
+
+#ifndef	__VENGINE
+#define __VENGINE
+
+#include ".\sprite\Level1\Engine\VEngine.h"
+
+/************************************************************/
+/* Init_VEngine						
+/* Initialise Engine Virtuel
+/************************************************************/
+
+void Init_VEngine()
+{
+	move_sprite(SPRITE_OFFSET_ENGINE+0,0,0);
+	move_sprite(SPRITE_OFFSET_ENGINE+1,0,0);
+
+	set_sprite_data(DATA_OFFSET_ENGINE,DATA_WIDTH_ENGINE,PtrEngine);
+
+	Init_VSmallWing();
+}
+
+/************************************************************/
+/* Run_VEngine()												
+/* Run Engine Virtuel
+/************************************************************/
+
+#define Run_VEngine() fctTypeOfEngine()
+
+/************************************************************/
+/* Init_VSmallWing()
+/* Initialise SmallWing
+/************************************************************/
+
+void Init_VSmallWing()
+{
+	// Vitesse du moteur
+	ubSpeedEngineX=1;
+	ubSpeedEngineY=1;
+	
+	set_sprite_tile(SPRITE_OFFSET_ENGINE+0,DATA_OFFSET_SMALLWING);
+	set_sprite_prop(SPRITE_OFFSET_ENGINE+0,PAL4);	
+
+	// à executer par la suite
+	fctTypeOfEngine=Run_VSmallWing;
+}
+
+/************************************************************
+ * Run_VSmallWing()					    *
+ * Run Small Wing					    *
+ ************************************************************/
+
+void Run_VSmallWing()
+{
+	// ** deplacement **
+
+	if((CounterVBL&0x01F)==0)
+	{
+		set_sprite_prop(SPRITE_OFFSET_ENGINE+0,PAL4|S_FLIPY);	
+	}
+	else if((CounterVBL&0x01F)==0x0F)
+	{
+		set_sprite_prop(SPRITE_OFFSET_ENGINE+0,PAL4);	
+	}
+
+	if(ubVanished==0)
+	{
+		move_sprite(SPRITE_OFFSET_ENGINE+0,VOpa.ubPosX-2,VOpa.ubPosY+2);
+	else
+	{
+
+		if((ubTimeVanished&0x02)==0)
+		{
+			move_sprite(SPRITE_OFFSET_ENGINE+0,0,0);
+		}
+		else
+		{
+			move_sprite(SPRITE_OFFSET_ENGINE+0,VOpa.ubPosX-2,VOpa.ubPosY+2);
+		}
+	}
+}
+
+/************************************************************/
+/* Init_VSmallEngine()
+/* Initialise SmallEngine
+/************************************************************/
+
+void Init_VSmallEngine()
+{
+	// Vitesse du moteur
+	ubSpeedEngineX=2;
+	ubSpeedEngineY=2;
+
+	set_sprite_prop(SPRITE_OFFSET_ENGINE+0,PAL4);	
+	set_sprite_tile(SPRITE_OFFSET_ENGINE+0,DATA_OFFSET_NORMALENGINE);
+
+	// à executer par la suite
+	fctTypeOfEngine=Run_VSmallEngine;
+}
+
+/************************************************************/
+/* Run_VSmallEngine()
+/* Initialise SmallEngine
+/************************************************************/
+
+void Run_VSmallEngine()
+{
+	// ** deplacement **
+
+	if((CounterVBL&0x01F)==0)
+	{
+		set_sprite_tile(SPRITE_OFFSET_ENGINE+0,DATA_OFFSET_NORMALENGINE+0);
+	}
+	else if((CounterVBL&0x01F)==0x0F)
+	{
+		set_sprite_tile(SPRITE_OFFSET_ENGINE+0,DATA_OFFSET_NORMALENGINE+1);
+	}
+
+	if(ubVanished==0)
+	{
+		move_sprite(SPRITE_OFFSET_ENGINE+0,VOpa.ubPosX-6,VOpa.ubPosY+1);
+	}
+	else
+	{
+		if((ubTimeVanished&0x02)==0)
+		{
+			move_sprite(SPRITE_OFFSET_ENGINE+0,0,0);
+		}
+		else
+		{
+			move_sprite(SPRITE_OFFSET_ENGINE+0,VOpa.ubPosX-6,VOpa.ubPosY+1);
+		}
+	}
+}
+
+#endif
+

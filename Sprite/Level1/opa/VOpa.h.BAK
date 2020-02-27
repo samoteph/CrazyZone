@@ -1,0 +1,68 @@
+/************************************************************/
+/*															*/ 
+/* VOpa !!!
+/*															*/ 
+/************************************************************/
+
+/************************************************************/
+/* Define
+/************************************************************/
+
+// Rect Collision de OPA
+
+#define	RECT_X_VOPA		2
+#define RECT_Y_VOPA		2
+
+#define	RECT_W_VOPA		12
+#define RECT_H_VOPA		8
+
+/************************************************************/
+/* Prototype
+/************************************************************/
+
+void Init_VOpa(UBYTE ubPosX,UBYTE ubPosY,UBYTE start);
+void Run_VOpa(void);
+
+void Init_Money();
+void Add_Money();
+
+void Init_Life();
+
+void Dec_Heart_VOpa();
+void Dec_Life_VOpa();
+
+void Show_Heart_VOpa();
+void Show_Life_VOpa();
+
+/************************************************************/
+/* Data Interne
+/************************************************************/
+
+structVSprite VOpa;
+
+/*UBYTE ubOpaPosX;
+UBYTE ubOpaPosY;
+UBYTE ubData[5];
+*/
+
+UBYTE ubPressA;
+UBYTE ubInvincible;
+
+/* Invincible*/
+
+UBYTE ubHeart;
+UBYTE ubMaxHeart;
+UBYTE ubLife;
+UBYTE ubVanished;
+UBYTE ubTimeVanished;
+
+UBYTE ubMoney[5];
+UWORD uwMoneyValue;
+
+/************************************************************/
+/* Data Externe
+/************************************************************/
+
+// ROM
+extern	UWORD PtrOpaCGBPal[];
+extern	unsigned char PtrOpa[];
